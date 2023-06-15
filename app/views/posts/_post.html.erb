@@ -1,0 +1,12 @@
+<div id="<%= dom_id post %>">
+  <div data-controller='like-post'>
+    <strong>Content:</strong>
+    <%= post.content %>
+    <br>
+    <%= simple_form_for([post, like], data: { like_post_target: 'form', action: 'submit->like-post#create'}) do |f| %>
+      <%= f.submit %>
+    <% end %>
+    <%= render 'likes/like', post: post %>
+  </div>
+
+</div>
